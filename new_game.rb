@@ -1,5 +1,6 @@
 puts "hello user"
 puts "would you like to play a game? \n\ (y or n)"
+
 def input
   gets.chomp
 end
@@ -36,24 +37,35 @@ end
 def first_response(input)
   if input == "y"
     puts "Cool beans. We begin."
-  elsif input == "n"
-    puts "Later, skater"
   else
-    "NOT VALID"
-end
+    puts "fine, whatever"
+    exit!
+  end
 end
 
 def help
-  puts 
-
+  puts "the goblins in your terminal respond to the following commands:"
+  sleep(2.1)
+  puts "slice, tickle, pay, and destroy"
+  sleep(2.3)
+  puts "be careful, destroying one goblin won't always get rid of all goblins"
 end
 
-def prompt
+def help_prompt
+  puts "you should really ask for help"
   if input == "help"
     help
   else
-    put "I really think you should ask for help"
+    help_prompt
   end
+end
+
+def decision_prompt(goblin)
+  puts "What do you do?"
+  if input = "slice"
+    gregory.slice
+  end
+end
 
 first_response(input)
 
@@ -69,7 +81,9 @@ sleep (1.9)
 
 puts "the goblin gregory has been called!"
 
+
 gregory = Goblin.new('gregory', 'bro', 'smug', 'raspy', 'williamsburg')
+
 
 gregory.announce
 
@@ -77,4 +91,7 @@ sleep(2.3)
 
 puts "you can ask for help with the 'help' command"
 
-prompt
+sleep(1.7)
+
+help_prompt
+decision_prompt
